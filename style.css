@@ -1,0 +1,132 @@
+/* Global */
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-beige: #FFE0BE;
+  --color-dark-beige: #CE9D68;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-black: #000000;
+
+  /* Font size */
+  --font-large: 60px;
+  --font-medium: 40px;
+  --font-regular: 26px;
+  --font-small: 20px;
+  --font-micro: 16px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 400;
+  --weight-regular: 300;
+
+  /* Size */
+  --size-border-radius: 4px;
+
+  /* Animation */
+  --animation-duration: 300ms;
+};
+
+/* Universal tags */
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0px;
+  font-family: 'Dongle', sans-serif;
+  cursor: default;
+  font-size: var(--font-regular);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-dark-beige);
+}
+
+ul {
+  padding-left: 0px;
+  margin: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0px;
+}
+
+/* Typography */
+h1 {
+  color: var(--color-black);
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  margin: 16px 0px;
+}
+
+h2 {
+  color: var(--color-black);
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  margin: 8px 0px;
+}
+
+h3 {
+  color: var(--color-black);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  margin: 8px 0px;
+}
+
+p {
+  color: var(--color-black);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  margin: 4px 0px;
+}
+
+/* Navbar */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-beige);
+  padding: 0px 30px;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-medium);
+  font-weight: var(--weight-bold);
+}
+
+.logo {
+  width: 30px;
+  margin-right: 10px;
+  padding-bottom:10px ;
+}
+
+.navbar__menu {
+  display: flex;
+}
+
+.navbar__menu__item {
+  border: 1px solid transparent;
+  padding:0px 10px ;
+  transition: all var(--animation-duration) ease;
+}
+
+.navbar__menu__item:hover {
+  border-color:var(--color-dark-beige) ;
+  background-color: var(--color-white);
+  border-radius: var(--size-border-radius);
+}
