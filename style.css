@@ -5,7 +5,7 @@
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
   --color-beige: #FFE0BE;
-  --color-dark-beige: #CE9D68;
+  --color-dark-beige: #B27B3F;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
@@ -66,14 +66,14 @@ button {
 
 /* Typography */
 h1 {
-  color: var(--color-black);
+  color: var(--color-dark-beige);
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
   margin: 16px 0px;
 }
 
 h2 {
-  color: var(--color-black);
+  color: var(--color-dark-beige);
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   margin: 8px 0px;
@@ -122,11 +122,100 @@ p {
 .navbar__menu__item {
   border: 1px solid transparent;
   padding:0px 10px ;
-  transition: all var(--animation-duration) ease;
+  transition: all var(--animation-duration) ease-in;
 }
 
 .navbar__menu__item:hover {
   border-color:var(--color-dark-beige) ;
   background-color: var(--color-white);
   border-radius: var(--size-border-radius);
+}
+
+/* Home */
+#home {
+  background: url(./img/home-background.png) center/cover no-repeat;
+  display: flex;
+  padding: 30px;
+}
+
+.home__left {
+  flex-basis: 60%;
+}
+
+.hom__left__container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 220px;
+  padding: 20px;
+  grid-template-areas:
+    'a a b c d'
+    'a a e f f'
+    'g h i f f'
+}
+
+.home__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img1 {
+  grid-area: a;
+}
+.img2 {
+  grid-area: g;
+}
+.img3 {
+  grid-area: f;
+}
+.img4 {
+  grid-area: b;
+}
+.img5 {
+  grid-area: d;
+}
+.img6 {
+  grid-area: c;
+}
+.img7 {
+  grid-area: h;
+}
+.img8 {
+  grid-area: i;
+}
+.img9 {
+  grid-area: e;
+}
+
+.home__right {
+  flex-basis: 40%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding: 20px;
+}
+
+.home__right strong {
+  color: var(--color-white);
+  background-color: var(--color-dark-beige);
+  border-radius: var(--size-border-radius);
+}
+
+.home__right__btn {
+  border: 3px solid var(--color-dark-beige);
+  border-radius: var(--size-border-radius);
+  background-color: transparent;
+  padding: 5px 20px;
+  color: #B27B3F;
+  font-size: var(--font-regular);
+  margin: 50px;
+  margin-top: 100px;
+  transition: all var(--animation-duration) ease-in;
+}
+
+.home__right__btn:hover {
+  background-color: var(--color-dark-beige);
+  color: var(--color-white);
 }
