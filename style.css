@@ -93,6 +93,14 @@ p {
   margin: 4px 0px;
 }
 
+/* section */
+.sections {
+  padding: 100px 50px;
+  max-width: 1200px;
+  text-align: center;
+  margin: auto;
+}
+
 /* Navbar */
 #navbar {
   display: flex;
@@ -218,4 +226,39 @@ p {
 .home__right__btn:hover {
   background-color: var(--color-dark-beige);
   color: var(--color-white);
+}
+
+/* About */
+.about__majors {
+  display: flex;
+  justify-content: space-around;
+  margin: 80px;
+}
+
+.major__icon {
+  width: 200px;
+  height: 200px;
+  border:1px solid var(--color-beige);
+  color: var(--color-dark-beige);
+  border-radius: 50%;
+  margin: auto;
+  font-size: 100px;
+  line-height: 250px;
+  margin-bottom: 20px;
+}
+
+.major__icon:hover i {
+  transform: rotate(-30deg) scale(1.2);
+  color: var(--color-beige);
+  transition: all var(--animation-duration) ease;
+}
+
+.job {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.job__description {
+  margin: 0px 20px;
 }
