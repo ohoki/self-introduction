@@ -413,3 +413,43 @@ p {
 .project__description p {
   color: var(--color-white);
 }
+
+/* Testimonials */
+#testimonials {
+  background-color: rgba(255, 224, 190, 0.5);
+}
+
+.testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+/* .testimonial:nth-child(even) {
+  flex-direction: row-reverse;
+} */
+
+.testimonial__avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid var(--color-dark-beige);
+  margin-right: 40px;
+}
+
+.testimonial__avatar:nth-child(even) {
+  margin-right: 0px;
+  margin-left: 40px;
+}
+
+.testimonial__speech-bubble {
+  background-color: var(--color-white);
+  border-radius: var(--size-border-radius);
+  width: 100%;
+  height: 150px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
