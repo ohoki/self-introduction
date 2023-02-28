@@ -453,3 +453,29 @@ p {
   flex-direction: column;
   justify-content: center;
 }
+
+/* Contact */
+#contact {
+  background-color: var(--color-beige);
+}
+
+#contact p {
+  color: var(--color-dark-beige);
+  font-weight: var(--weight-semi-bold);
+}
+
+.contact__SNS {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-large);
+  padding: 20px;
+}
+
+.blog {
+  margin: 0px 50px;
+  width: 58px;
+  height: 55px;
+  position: relative;
+  top: 5px;
+}
