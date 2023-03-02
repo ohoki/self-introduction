@@ -96,7 +96,7 @@ p {
 
 /* section */
 .sections {
-  padding: 100px 50px;
+  padding: 50px 50px;
   max-width: 1200px;
   text-align: center;
   margin: auto;
@@ -136,15 +136,22 @@ p {
 
 .navbar__menu__item:hover {
   border-color:var(--color-dark-beige) ;
-  background-color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: var(--size-border-radius);
+}
+
+.navbar__Toggle {
+  background-color: var(--color-beige);
+  color: var(--color-dark-beige);
+  font-size: var(--font-regular);
+  display: none;
 }
 
 /* Home */
 #home {
   background: url(./img/home-background.png) center/cover no-repeat;
   display: flex;
-  padding: 30px;
+  padding: 10px;
 }
 
 .home__left {
@@ -426,10 +433,6 @@ p {
   margin: 30px;
 }
 
-/* .testimonial:nth-child(even) {
-  flex-direction: row-reverse;
-} */
-
 .testimonial__avatar {
   width: 150px;
   height: 150px;
@@ -478,4 +481,112 @@ p {
   height: 55px;
   position: relative;
   top: 5px;
+}
+
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  :root {
+    /* Font-size */
+    --font-large: 40px;
+    --font-medium: 25px;
+    --font-regular: 18px;
+    --font-small: 10px;
+    --font-micro: 6px;
+  }
+
+  h1 {
+    margin: 8px;
+  }
+
+  /* Section  */
+  .sections {
+    padding: 16px;
+  }
+
+  /* Navbar */
+  .navbar__menu {
+    display: none;
+  }
+
+  .navbar__Toggle {
+    display: block;
+    position: relative;
+    font-size: 20px;
+    top: -3px;
+  }
+
+  .navbar__logo a {
+    font-size: 40px;
+  }
+
+  /* Home */
+  #home {
+    flex-direction: column;
+  }
+
+  
+  .hom__left__container {
+  grid-auto-rows: 100px;
+  }
+
+  .home__right__btn {
+    margin: 50px;
+  }
+
+  /* About */
+  .about__majors {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .major {
+    margin-bottom: 20px;
+  }
+
+  .major__icon {
+    width: 150px;
+    height: 150px;
+    line-height: 200px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  /* Works */
+  .category__btn {
+    margin: 10px;
+  }
+
+  .work__projects {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project {
+    flex-grow: 1;
+    margin: 10px;
+    padding: 10px 0px;
+  }
+
+  /* Testimonials  */
+  .testimonial {
+    flex-direction: column;
+  }
+
+  .testimonial__avatar {
+  margin: 0px;
+  margin-bottom: 20px;
+  }
+
+  .testimonial:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+
+  .testimonial__avatar:nth-child(even) {
+    margin: 0px;
+    margin-bottom: 20px;
+  }
 }
