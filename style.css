@@ -41,6 +41,7 @@ body{
   font-family: 'Dongle', sans-serif;
   cursor: default;
   font-size: var(--font-regular);
+  position: relative;
 }
 
 a {
@@ -105,14 +106,24 @@ p {
 /* Navbar */
 #navbar {
   display: flex;
+  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-beige);
   padding: 0px 30px;
 }
 
+
+#navbar.navbar__scroll {
+  position: fixed;
+  width: 100%;
+  padding: 0px 30px;
+  background-color: rgba(255, 224, 190, 0.8);
+  z-index: 1;
+}
+
 .navbar__logo {
-  display: flex;
+  display: flex; 
   align-items: center;
   font-size: var(--font-medium);
   font-weight: var(--weight-bold);
@@ -355,7 +366,6 @@ p {
   color: var(--color-dark-beige);
   font-weight: var(--weight-bold);
   padding: 10px 0px;
-  margin: 20px;
   position: relative;
   transition: all var(--animation-duration) ease;
 }
@@ -563,11 +573,20 @@ p {
     line-height: 200px;
   }
 
+  .major__icon i {
+    font-size: 90px;
+  }
+
   .skillset {
     flex-direction: column;
   }
 
   /* Works */
+  .work__categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .category__btn {
     margin: 10px;
     width: 100%;
@@ -601,5 +620,11 @@ p {
   .testimonial__avatar:nth-child(even) {
     margin: 0px;
     margin-bottom: 20px;
+  }
+
+  .blog {
+    margin: 0px 40px;
+    width: 40px;
+    height: 40px;
   }
 }
