@@ -222,18 +222,29 @@ p {
 .home__right__btn {
   border: 3px solid var(--color-dark-beige);
   border-radius: var(--size-border-radius);
-  background-color: transparent;
   padding: 5px 20px;
-  color: #B27B3F;
+  color: var(--color-white);
   font-size: var(--font-regular);
   margin: 50px;
   margin-top: 100px;
-  transition: all var(--animation-duration) ease-in;
+  animation: alternate-background 2500ms infinite ease-in;
 }
 
-.home__right__btn:hover {
-  background-color: var(--color-dark-beige);
-  color: var(--color-white);
+@keyframes alternate-background {
+  from {
+  background-color: rgba(178, 123, 63, 1);
+  border-radius: var(--size-border-radius);
+  }
+
+  50% {
+    background-color: rgba(178, 123, 63, 0.5);
+    transform: scale(1.05);
+  }
+
+  to {
+  background-color: rgba(178, 123, 63, 1);
+  border-radius: var(--size-border-radius);
+  }
 }
 
 /* About */
@@ -342,6 +353,7 @@ p {
   border-radius: var(--size-border-radius);
   width: 200px;
   color: var(--color-dark-beige);
+  font-weight: var(--weight-bold);
   padding: 10px 0px;
   margin: 20px;
   position: relative;
@@ -558,6 +570,7 @@ p {
   /* Works */
   .category__btn {
     margin: 10px;
+    width: 100%;
   }
 
   .work__projects {
