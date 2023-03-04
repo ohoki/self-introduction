@@ -17,3 +17,14 @@ const navMenu = document.querySelector('.navbar__menu');
 navToggleBtn.addEventListener('click', () => {
   navMenu.classList.toggle('open');
 });
+// 3.navbar__menu__item 클릭 시 해당 섹션 이동
+navMenu.addEventListener('click', (e) => {
+  const targetLink = e.target.dataset.link;
+  navMenu.classList.remove('open');
+  scrollTo(targetLink);
+});
+
+function scrollTo(targetLink) {
+  const selectTargetLink = document.querySelector(targetLink);
+  selectTargetLink.scrollIntoView({behavior: 'smooth'});
+};

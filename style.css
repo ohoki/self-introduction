@@ -139,6 +139,7 @@ p {
 }
 
 .navbar__menu__item {
+  color: var(--color-dark-beige);
   border: 1px solid transparent;
   padding:0px 10px ;
   transition: all var(--animation-duration) ease-in;
