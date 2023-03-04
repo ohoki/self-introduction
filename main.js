@@ -30,6 +30,19 @@ contactBtn.addEventListener('click', () => {
   scrollTo('#contact');
 });
 
+//Arrow button
+// 1.home섹션 중간 넘어가면 arrow button 활성화
+const arrowBtn = document.querySelector('.arrowBtn');
+const home = document.querySelector('#home');
+const homeHeigt = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+if (window.scrollY >= homeHeigt/2) {
+  arrowBtn.classList.add('visible');
+} else {
+  arrowBtn.classList.remove('visible');
+};
+});
+
 
 //Function
 function scrollTo(targetLink) {

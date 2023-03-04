@@ -507,6 +507,20 @@ p {
   top: 5px;
 }
 
+.arrowBtn {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  font-size: var(--font-large);
+  color: var(--color-dark-beige);
+  cursor: pointer;
+  opacity: 0.8;
+  display: none;
+}
+
+.arrowBtn.visible {
+  display: block;
+}
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
@@ -644,4 +658,11 @@ p {
     width: 40px;
     height: 40px;
   }
+
+  .arrowBtn {
+    right: 20px;
+    bottom: 20px;
+    font-size: 60px;
+  }
+  
 }
