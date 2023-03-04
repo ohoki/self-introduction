@@ -43,6 +43,11 @@ if (window.scrollY >= homeHeigt/2) {
 };
 });
 
+// 2.arrow button 누르면 home 섹션 이동
+arrowBtn.addEventListener('click', () => {
+scrollTo('#home');
+});
+
 
 //Function
 function scrollTo(targetLink) {
