@@ -42,10 +42,25 @@ if (window.scrollY >= homeHeigt/2) {
   arrowBtn.classList.remove('visible');
 };
 });
-
 // 2.arrow button 누르면 home 섹션 이동
 arrowBtn.addEventListener('click', () => {
 scrollTo('#home');
+});
+
+//Works
+// 1.workBtn selected 그 외 버튼 selected 제거 
+const workBtnContainer = document.querySelector('.work__categories');
+workBtnContainer.addEventListener('click', (e) => {
+const selectedBtn = document.querySelector('.category__btn.selected');
+const selected = 
+      e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+console.log(selectedBtn);
+if (!selectedBtn) {
+  selected.classList.add('selected');
+} else {
+  selectedBtn.classList.remove('selected');
+  selected.classList.add('selected');
+};
 });
 
 
