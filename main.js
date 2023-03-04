@@ -51,17 +51,34 @@ scrollTo('#home');
 // 1.workBtn selected 그 외 버튼 selected 제거 
 const workBtnContainer = document.querySelector('.work__categories');
 workBtnContainer.addEventListener('click', (e) => {
-const selectedBtn = document.querySelector('.category__btn.selected');
-const selected = 
-      e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
-console.log(selectedBtn);
-if (!selectedBtn) {
-  selected.classList.add('selected');
-} else {
-  selectedBtn.classList.remove('selected');
-  selected.classList.add('selected');
-};
+  const selectedBtn = document.querySelector('.category__btn.selected');
+  const selected = 
+  e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+  if (!selectedBtn) {
+    selected.classList.add('selected');
+  } else {
+    selectedBtn.classList.remove('selected');
+    selected.classList.add('selected');
+  };
 });
+// 2.workBtn 선택 시 해당 Project 나타나기
+const projectsContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e) => {
+  const filter = 
+  e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  projectsContainer.classList.add('anm-out');
+  setTimeout(() => {
+    projects.forEach((project) => {
+      if (filter == '*' || project.dataset.type === filter) {
+        project.classList.remove('project__invisible');
+      } else {
+        project.classList.add('project__invisible');
+      }
+      projectsContainer.classList.remove('anm-out');
+    });
+  }, 300);
+});  
 
 
 //Function
