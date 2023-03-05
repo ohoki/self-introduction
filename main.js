@@ -22,6 +22,7 @@ navMenu.addEventListener('click', (e) => {
   const targetLink = e.target.dataset.link;
   navMenu.classList.remove('open');
   scrollTo(targetLink);
+  selectNavItem(e.target);
 });
 
 //Home
@@ -78,12 +79,57 @@ workBtnContainer.addEventListener('click', (e) => {
       projectsContainer.classList.remove('anm-out');
     });
   }, 300);
-});  
+});
 
+//추가기능 - 스크롤 시 Navbar 메뉴 아이템 활성화
+const sectionIds = [
+  '#home',
+  '#about',
+  '#skills',
+  '#work',
+  '#testimonials',
+  '#contact',
+];
+const sections = sectionIds.map((id) => document.querySelector(id));
+const navItems = sectionIds.map((id) => document.querySelector(`[data-link="${id}"]`));
+
+let selectedNavItem = navItems[0];
+let selectedNavIndex = 0;
+
+function selectNavItem(selected) {
+  selectedNavItem.classList.remove('selected');
+  selectedNavItem = selected;
+  selectedNavItem.classList.add('selected');
+};
+
+const observerOptions = {root: null, rootMargin: '0px', threshold: 0.3,};
+const observerCallback = (entries,observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+      if(entry.boundingClientRect.y < 0) {
+        selectedNavIndex = index +1;
+      } else {
+        selectedNavIndex = index -1;
+      };
+    };
+  });
+};
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach(section => observer.observe(section));
+
+window.addEventListener('wheel', () => {
+  if(window.scrollY === 0) {
+    selectedNavIndex = 0;
+  } else if(window.scrollY + window.innerHeight === document.body.clientHeight) {
+    selectedNavIndex = navItems.length -1;
+  };
+  selectNavItem(navItems[selectedNavIndex]);
+});
 
 //Function
 function scrollTo(targetLink) {
   const selectTargetLink = document.querySelector(targetLink);
   selectTargetLink.scrollIntoView({behavior: 'smooth'});
+  selectNavItem(navItems[sectionIds.indexOf(targetLink)]);
 };
-

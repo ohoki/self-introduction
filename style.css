@@ -115,7 +115,6 @@ p {
   padding: 0px 30px;
 }
 
-
 #navbar.navbar__scroll {
   background-color: rgba(255, 224, 190, 0.8);
   z-index: 1;
@@ -146,6 +145,7 @@ p {
   cursor: pointer;
 }
 
+.navbar__menu__item.selected, 
 .navbar__menu__item:hover {
   border-color:var(--color-dark-beige) ;
   background-color: rgba(255, 255, 255, 0.5);
@@ -231,6 +231,10 @@ p {
   color: var(--color-white);
   background-color: var(--color-dark-beige);
   border-radius: var(--size-border-radius);
+}
+
+.home__right strong:hover {
+  transform: scale(1.5);
 }
 
 .home__right__btn {
